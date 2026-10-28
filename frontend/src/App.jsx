@@ -791,19 +791,19 @@ function InteractiveHero3D() {
       <div className="hero-halo-glow" />
       <div className="ring ring-a" />
       <div className="ring ring-b" />
-      <div className="ring ring-c" />
-      <div className="ring ring-d" />
 
       <div
         className="hero-core"
         style={{
           transform: coords.hovering
-            ? `translateX(${coords.x * 6}px) translateY(${coords.y * 6 - 4}px)`
-            : "translateX(0) translateY(0)",
+            ? `rotateX(${-coords.y * 5}deg) rotateY(${coords.x * 7}deg) translateX(${coords.x * 5}px) translateY(${coords.y * 5}px)`
+            : "rotateX(0deg) rotateY(0deg) translateX(0) translateY(0)",
           transition: coords.hovering ? "transform 0.12s ease-out" : "transform 0.5s ease"
         }}
       >
-        <img src="/vidyachain-logo.png" alt="VidyaChain Logo" className="hero-logo-img" />
+        <div className="hero-logo-stage">
+          <img src="/vidyachain-logo.png" alt="VidyaChain Logo" className="hero-logo-img" />
+        </div>
         <b>VIDYACHAIN</b>
         <small>TRUST ENGINE</small>
       </div>
@@ -830,9 +830,6 @@ function InteractiveHero3D() {
       >
         <LockKeyhole size={16} /> SecureVault Protected
       </div>
-
-      <div className="art-spark spark-a">✦</div>
-      <div className="art-spark spark-b">✧</div>
     </div>
   );
 }
